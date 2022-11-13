@@ -34,7 +34,7 @@ createBoxesBtn.addEventListener('click',createBoxes);
 destroyBoxesBtn.addEventListener('click', destroyAllBoxes);
 
 let counter=0;
-
+let boxesArray=[];
 function createBoxes(amount){
   amount=numberInput.value;
   if (amount>0){
@@ -45,8 +45,9 @@ function createBoxes(amount){
       box.style.height=`${30 + 10 * (a+counter)}px`;
       box.style.backgroundColor=boxColor;
       box.style.marginTop=`20px`;
-      boxesContainer.appendChild(box);
+      boxesArray.push(box);
     }
+    boxesContainer.append(...boxesArray);
   } 
   else {
     return alert("Please enter the number");

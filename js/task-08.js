@@ -27,10 +27,10 @@ function formSubmitHandler(evt){
     const {password}=evt.target.elements;
        if(email.value.length!==0&&password.value.length!==0){
             const dataObj={
-                email,
-                password,
+                email: email.value,
+                password: password.value,
             };
-            console.log(dataObj.email.value,dataObj.password.value);
+            console.log(dataObj);
             evt.target.reset();
         }else {
             evt.target.reset();
